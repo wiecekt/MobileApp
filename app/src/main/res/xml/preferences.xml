@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="Notifications" >
+        <CheckBoxPreference android:key="unknownCalls"
+        android:title="Incoming call from unknown number"
+        android:summary="Send information about incoming call from unknown number" />
+
+        <CheckBoxPreference android:key="unknownSMS"
+            android:title="SMS from unknown number"
+            android:summary="Send information about SMS from unknown number" />
+
+        <Preference android:title="Incoming call from contacts"
+            android:key="button"
+            android:summary="You will receive notifications from selected contacts"/>
+        <Preference android:title="SMS from contacts"
+            android:key="button2"
+            android:summary="You will receive notifications from selected contacts"/>
+    </PreferenceCategory>
+
+</PreferenceScreen>

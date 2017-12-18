@@ -1,15 +1,16 @@
-package wiecekt.mobileapp;
+package wiecekt.mobileapp.activity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.google.firebase.auth.FirebaseAuth;
+import wiecekt.mobileapp.R;
+import wiecekt.mobileapp.User;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -25,7 +26,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
+        Log.d("LoginActivity", "tekst");
         user = new User();
 
         if(user.getUser() != null) {
@@ -33,27 +34,21 @@ public class LoginActivity extends AppCompatActivity {
             finish();
         }
 
-        editTextEmail = (EditText) findViewById(R.id.editTextEmail);
-        editTextPassword = (EditText) findViewById(R.id.editTextPassword);
-        buttonLogin = (Button) findViewById(R.id.buttonLogin);
-        textViewSignup = (TextView) findViewById(R.id.textViewSignUp);
+        editTextEmail = findViewById(R.id.editTextEmail);
+        editTextPassword =  findViewById(R.id.editTextPassword);
+        buttonLogin = findViewById(R.id.buttonLogin);
+        textViewSignup = findViewById(R.id.textViewSignUp);
         progressDialog = new ProgressDialog(this);
 
-        buttonLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String email = editTextEmail.getText().toString().trim();
-                String password = editTextPassword.getText().toString().trim();
-                user.signIn(LoginActivity.this, email, password);
-            }
+        buttonLogin.setOnClickListener(v -> {
+            String email = editTextEmail.getText().toString().trim();
+            String password = editTextPassword.getText().toString().trim();
+            user.signIn(LoginActivity.this, email, password);
         });
 
-        textViewSignup.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        textViewSignup.setOnClickListener(v -> {
                 startActivity(new Intent(getApplicationContext(), RegisterActivity.class));
                 finish();
-            }
         });
     }
 

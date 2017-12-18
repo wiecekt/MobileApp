@@ -1,4 +1,4 @@
-package wiecekt.mobileapp;
+package wiecekt.mobileapp.fragment;
 
 import android.app.Fragment;
 import android.content.Context;
@@ -9,6 +9,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import wiecekt.mobileapp.ContactsSettings;
+import wiecekt.mobileapp.R;
 
 public class FragmentSettings extends Fragment {
 
@@ -75,15 +78,12 @@ public class FragmentSettings extends Fragment {
 
             Preference button =  getPreferenceManager().findPreference("button");
             if(button != null) {
-                button.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-                    @Override
-                    public boolean onPreferenceClick(Preference preference) {
-                        System.out.println("=============klik");
-                        contactsSettings.readContacts(cx);
-                        contactsSettings.showDialog(cx);
-                        method();
-                        return true;
-                    }
+                button.setOnPreferenceClickListener(preference -> {
+                    System.out.println("=============klik");
+                    contactsSettings.readContacts(cx);
+                    contactsSettings.showDialog(cx);
+                    method();
+                    return true;
                 });
             }
         }

@@ -1,4 +1,4 @@
-package wiecekt.mobileapp;
+package wiecekt.mobileapp.fragment;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -8,7 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import java.util.List;
+import wiecekt.mobileapp.ContactsSettings;
+import wiecekt.mobileapp.controller.DatabaseController;
+import wiecekt.mobileapp.R;
 
 public class FragmentHome extends Fragment {
 
@@ -26,22 +28,15 @@ public class FragmentHome extends Fragment {
         databaseController = new DatabaseController();
 
         buttonTest = (Button) view.findViewById(R.id.buttonTest);
-        buttonTest.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                //System.out.println("WIADOMOSC: " + databaseController.getAndSetContactsSettings());
-                //List<ContactsDTO> list = databaseController.getContacts();
-                //contactsSettings.setContacts(list);
-            }
+        buttonTest.setOnClickListener(v -> {
+            //System.out.println("WIADOMOSC: " + databaseController.getAndSetContactsSettings());
+            //List<ContactsDTO> list = databaseController.getContacts();
+            //contactsSettings.setContacts(list);
         });
 
         buttonTestUpdate = (Button) view.findViewById(R.id.button_testUpdate);
-        buttonTestUpdate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //databaseController.getDesktopStatus(); // sprawdz jutro i modl sie zeby zdazyc bo kiepsko to widze na prawdee kiepsko :(
-            }
+        buttonTestUpdate.setOnClickListener(v -> {
+            //databaseController.getDesktopStatus(); // sprawdz jutro i modl sie zeby zdazyc bo kiepsko to widze na prawdee kiepsko :(
         });
     }
 

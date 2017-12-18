@@ -1,13 +1,14 @@
-package wiecekt.mobileapp;
+package wiecekt.mobileapp.broadcast_receiver;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.provider.ContactsContract;
-import android.telephony.SmsManager;
 import android.telephony.SmsMessage;
+
+import wiecekt.mobileapp.controller.DatabaseController;
+import wiecekt.mobileapp.dto.EventDTO;
 
 public class SMSReceiver extends BroadcastReceiver {
 

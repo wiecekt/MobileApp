@@ -1,4 +1,4 @@
-package wiecekt.mobileapp;
+package wiecekt.mobileapp.controller;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -8,6 +8,12 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import wiecekt.mobileapp.ContactsSettings;
+import wiecekt.mobileapp.OnGetDataListener;
+import wiecekt.mobileapp.User;
+import wiecekt.mobileapp.dto.ContactsDTO;
+import wiecekt.mobileapp.dto.EventDTO;
 
 
 public class DatabaseController {

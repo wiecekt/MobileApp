@@ -1,4 +1,4 @@
-package wiecekt.mobileapp;
+package wiecekt.mobileapp.activity;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
@@ -15,7 +15,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
+import wiecekt.mobileapp.R;
+import wiecekt.mobileapp.User;
+import wiecekt.mobileapp.activity.LoginActivity;
+import wiecekt.mobileapp.fragment.FragmentHome;
+import wiecekt.mobileapp.fragment.FragmentInfo;
+import wiecekt.mobileapp.fragment.FragmentSettings;
 
 public class NavigationActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -38,19 +43,19 @@ public class NavigationActivity extends AppCompatActivity
             user.getUserEmail();
         }
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         View headerView = navigationView.getHeaderView(0);
-        textViewMenuEmail = (TextView) headerView.findViewById(R.id.menuEmail);
+        textViewMenuEmail = headerView.findViewById(R.id.menuEmail);
         textViewMenuEmail.setText(user.getUserEmail());
 
         displaySelectedScreen(R.id.nav_home);
@@ -58,7 +63,7 @@ public class NavigationActivity extends AppCompatActivity
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
@@ -96,7 +101,7 @@ public class NavigationActivity extends AppCompatActivity
             ft.commit();
         }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
     }
 

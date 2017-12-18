@@ -1,4 +1,4 @@
-package wiecekt.mobileapp;
+package wiecekt.mobileapp.broadcast_receiver;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

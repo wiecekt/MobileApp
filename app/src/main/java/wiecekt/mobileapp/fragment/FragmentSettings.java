@@ -86,6 +86,17 @@ public class FragmentSettings extends Fragment {
                     return true;
                 });
             }
+
+            Preference button2 =  getPreferenceManager().findPreference("button2");
+            if(button2 != null) {
+                button2.setOnPreferenceClickListener(preference -> {
+                    System.out.println("=============klik");
+                    contactsSettings.readContacts(cx);
+                    contactsSettings.showDialog(cx);
+                    method();
+                    return true;
+                });
+            }
         }
 
         private void method() {

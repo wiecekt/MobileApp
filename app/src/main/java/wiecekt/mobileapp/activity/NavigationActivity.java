@@ -4,6 +4,7 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -18,6 +19,9 @@ import android.widget.TextView;
 import wiecekt.mobileapp.R;
 import wiecekt.mobileapp.User;
 import wiecekt.mobileapp.activity.LoginActivity;
+import wiecekt.mobileapp.broadcast_receiver.BRUtil;
+import wiecekt.mobileapp.broadcast_receiver.CallReceiver;
+import wiecekt.mobileapp.broadcast_receiver.SMSReceiver;
 import wiecekt.mobileapp.fragment.FragmentHome;
 import wiecekt.mobileapp.fragment.FragmentInfo;
 import wiecekt.mobileapp.fragment.FragmentSettings;
@@ -27,6 +31,9 @@ public class NavigationActivity extends AppCompatActivity
 
     private User user;
     private TextView textViewMenuEmail;
+
+    private CallReceiver callReceiver = new CallReceiver();
+    private SMSReceiver smsReceiver = new SMSReceiver();
 
 
     @Override
@@ -39,8 +46,6 @@ public class NavigationActivity extends AppCompatActivity
         if(!user.isUserSignedIn()) {
             finish();
             startActivity(new Intent(this, LoginActivity.class));
-        } else {
-            user.getUserEmail();
         }
 
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -87,6 +92,7 @@ public class NavigationActivity extends AppCompatActivity
                 break;
             case R.id.nav_logout:
                 user.signOut();
+                // zrob unregister broadcastreceivery lub w loginactiviy odrejestruj a w home rejestruj
                 startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                 finish();
                 break;

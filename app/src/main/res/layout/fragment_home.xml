@@ -4,31 +4,57 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:text="TextView"
+        android:id="@+id/TextViewMobile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="103dp"
-        android:id="@+id/textView8" />
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="118dp"
+        android:text="Mobile status:" />
 
-    <Button
-        android:text="Test bazy"
+    <TextView
+        android:id="@+id/TextViewMobileStatus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textView8"
-        android:layout_toEndOf="@+id/textView8"
-        android:layout_marginStart="69dp"
-        android:layout_marginBottom="14dp"
-        android:id="@+id/buttonTest" />
+        android:layout_alignBottom="@+id/TextViewMobile"
+        android:layout_marginStart="18dp"
+        android:layout_toEndOf="@+id/TextViewMobile"
+        android:text="Connected" />
 
-    <Button
-        android:text="testuj update"
+    <TextView
+        android:id="@+id/TextViewDesktop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/button_testUpdate" />
+        android:layout_alignStart="@+id/TextViewMobile"
+        android:layout_below="@+id/TextViewMobile"
+        android:layout_marginTop="26dp"
+        android:text="Desktop status:" />
 
+    <TextView
+        android:id="@+id/TextViewDesktopStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/TextViewDesktop"
+        android:layout_alignBottom="@+id/TextViewDesktop"
+        android:layout_alignStart="@+id/TextViewMobileStatus"
+        android:text="Disconnected" />
+
+    <TextView
+        android:id="@+id/TextViewConnectionMessage"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/TextViewDesktop"
+        android:layout_below="@+id/TextViewStatus"
+        android:layout_marginTop="13dp"
+        android:text="Currently you are not signed in  to your account at PC.  Please sign in if you want to receive notifications." />
+
+    <TextView
+        android:id="@+id/TextViewStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/TextViewConnectionMessage"
+        android:layout_below="@+id/TextViewDesktop"
+        android:layout_marginTop="47dp"
+        android:text="Status:" />
 </RelativeLayout>

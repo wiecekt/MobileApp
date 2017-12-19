@@ -8,6 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/colorPrimary"
     tools:context="wiecekt.mobileapp.activity.LoginActivity">
 
     <LinearLayout
@@ -23,6 +24,9 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="User Login"
             android:id="@+id/textViewLogin"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:padding="20dp"
             android:layout_gravity="center_horizontal" />
 
         <EditText
@@ -35,6 +39,8 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="69dp"
+            android:textColorHint="@color/colorAccent"
+            android:background="@drawable/edittext_login_form"
             android:id="@+id/editTextEmail" />
 
         <EditText
@@ -47,15 +53,20 @@
             android:layout_marginTop="34dp"
             android:id="@+id/editTextPassword"
             android:layout_below="@+id/editTextEmail"
+            android:textColorHint="@color/colorAccent"
+            android:background="@drawable/edittext_login_form"
             android:layout_alignParentStart="true" />
 
         <Button
             android:text="Login"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
             android:layout_margin="15dp"
             android:id="@+id/buttonLogin"
             android:layout_below="@+id/editTextEmail"
+            android:background="@drawable/button_login_form"
+            android:textColor="@color/white"
             android:layout_centerHorizontal="true" />
 
         <TextView
@@ -63,6 +74,9 @@
             android:layout_height="wrap_content"
             android:text="Don't have an account? Sign up here"
             android:id="@+id/textViewSignUp"
+            android:textColor="@color/white"
+            android:padding="20dp"
+            android:textSize="16dp"
             android:textAlignment="center" />
 
 

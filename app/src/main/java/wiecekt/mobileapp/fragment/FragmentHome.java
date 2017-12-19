@@ -14,8 +14,8 @@ import wiecekt.mobileapp.R;
 
 public class FragmentHome extends Fragment {
 
-    private Button buttonTest;
-    private Button buttonTestUpdate;
+    /*private Button buttonTest;
+    private Button buttonTestUpdate;*/
     private DatabaseController databaseController;
     private ContactsSettings contactsSettings;
 
@@ -27,7 +27,7 @@ public class FragmentHome extends Fragment {
         contactsSettings = ContactsSettings.getInstance();
         databaseController = new DatabaseController();
 
-        buttonTest = (Button) view.findViewById(R.id.buttonTest);
+        /*buttonTest = (Button) view.findViewById(R.id.buttonTest);
         buttonTest.setOnClickListener(v -> {
             //System.out.println("WIADOMOSC: " + databaseController.getAndSetContactsSettings());
             //List<ContactsDTO> list = databaseController.getContacts();
@@ -37,7 +37,7 @@ public class FragmentHome extends Fragment {
         buttonTestUpdate = (Button) view.findViewById(R.id.button_testUpdate);
         buttonTestUpdate.setOnClickListener(v -> {
             //databaseController.getDesktopStatus(); // sprawdz jutro i modl sie zeby zdazyc bo kiepsko to widze na prawdee kiepsko :(
-        });
+        });*/
     }
 
     @Nullable

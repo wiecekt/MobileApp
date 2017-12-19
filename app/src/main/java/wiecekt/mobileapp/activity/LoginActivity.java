@@ -11,6 +11,9 @@ import android.widget.TextView;
 
 import wiecekt.mobileapp.R;
 import wiecekt.mobileapp.User;
+import wiecekt.mobileapp.broadcast_receiver.BRUtil;
+import wiecekt.mobileapp.broadcast_receiver.CallReceiver;
+import wiecekt.mobileapp.broadcast_receiver.SMSReceiver;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -21,6 +24,9 @@ public class LoginActivity extends AppCompatActivity {
     private ProgressDialog progressDialog;
 
     private User user;
+
+    private CallReceiver callReceiver = new CallReceiver();
+    private SMSReceiver smsReceiver = new SMSReceiver();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,5 +57,4 @@ public class LoginActivity extends AppCompatActivity {
                 finish();
         });
     }
-
 }
